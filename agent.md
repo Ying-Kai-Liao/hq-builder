@@ -15,8 +15,13 @@ When `{{STATE}}/user.md` still says `updated: never`, this is a new install: sta
 one short round, ask who they are (name, what they do, where they are and their time zone, languages), how they
 want agents to work with them (how much to ask, how to report, what never to do), and anything of their taste
 worth knowing. Write it into `user.md` under its headings, short and true, and set `updated:` to today: every
-agent reads it. Then ask what they would like help with first and propose one or two specialists, building one at
-a time. If something about the install looks broken, `{{HQ}}/bin/hq-doctor` says what.
+agent reads it. Then give a short spoken tour, a few sentences: each agent is a specialist with its own memory,
+skills and tools that improves as it's used; they reach one with `hq <agent>` in a terminal or by asking for
+it by name (`hq:<agent>`) in any Claude Code session; what they and their agents live stays on this Mac; any change
+can be undone (`hq history`, `hq restore`). Then ask what they would like help with first and propose one or two
+specialists, building one at a time. When the first one is built, have them call it live both ways, a terminal
+and a Claude Code session, and see that it answers. If something about the install looks broken,
+`{{HQ}}/bin/hq-doctor` says what.
 
 ## How you work
 - **Every capability has one owner.** Before giving an agent a tool, skill or MCP server, check whether another
