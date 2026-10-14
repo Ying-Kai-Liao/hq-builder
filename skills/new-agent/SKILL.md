@@ -46,6 +46,11 @@ It creates agent.md with TODOs, capabilities.yaml, settings.json (every plugin o
 - **capabilities.yaml:** tools, state locations, credentials by name and where they live, access level.
   Add `global_skills: true` only if it truly needs skills from `~/.claude/skills` (design and video agents often do;
   most don't).
+  Every program its tools or skills run that a fresh Mac lacks goes under `requires:`, one per line,
+  `name: install command  # what for` (`ffmpeg: brew install ffmpeg  # cutting footage`); the name is a command, or
+  a path for an app (`/Applications/Google Chrome.app: brew install --cask google-chrome`). `hq install` offers to
+  install the missing ones, `hq doctor` reports them, `hq deps <name> --install` fixes them. Not for logins or keys
+  (those are services) or per-project setup like a venv (the agent makes that on first use).
 - **settings.json:** `permissions.allow` for the agent's own tools and write folders (memory:
   `Edit(/{{HOME_DIR}}/memory/**)` *and* `Edit(/{{HOME_REAL}}/memory/**)`, since Claude Code matches the
   symlink-resolved path, so the `{{HOME_DIR}}` rule alone still prompts for new files; learned skills, which are part
